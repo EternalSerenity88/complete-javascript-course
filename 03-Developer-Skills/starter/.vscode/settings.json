@@ -1,0 +1,33 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    {
+      "text": "VIDEO",
+      "color": "#333",
+      "backgroundColor": "#3498db"
+    },
+    {
+      "text": "FIXME",
+      "color": "#333",
+      "backgroundColor": "#e67e22"
+    },
+    {
+      "text": "LEC",
+      "color": "#333",
+      "backgroundColor": "#f1c40f"
+    },
+    {
+      "text": "BUG",
+      "color": "#333",
+      "backgroundColor": "#e74c3c"
+    },
+    {
+      "text": "TODO",
+      "color": "#333",
+      "backgroundColor": "#2ecc71"
+    }
+  ]
+}
