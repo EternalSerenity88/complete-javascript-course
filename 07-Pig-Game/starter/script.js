@@ -20,10 +20,35 @@ score1El.textContent = 0;
 // Making dice invisible
 diceEl.classList.add('hidden');
 
-const scores = [0, 0]; // To hold total scores for each player, [0] - first player's score, [1] - second player's score
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true; // To make the game stop after winning
+// const scores = [0, 0]; // To hold total scores for each player, [0] - first player's score, [1] - second player's score
+// let currentScore = 0;
+// let activePlayer = 0;
+// et playing = true; // To make the game stop after winning
+
+let scores, currentScore, activePlayer, playing;
+
+const init = function () {
+  // Reset total scores to zero
+  scores = [0, 0];
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+
+  // Reset current scores to zero
+  currentScore = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  playing = true;
+  activePlayer = 0;
+
+  // Reset overlay and dice
+  diceEl.classList.add('hidden');
+  player0El.classList.add('player--active');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--active');
+  player1El.classList.remove('player--winner');
+};
+init();
 
 const switchPlayer = function () {
   // Reset score of current player to zero
@@ -69,7 +94,7 @@ btnHold.addEventListener('click', function () {
       scores[activePlayer];
 
     // 2. Check if player's score is >= 100
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       // Finish the game
       playing = false;
       diceEl.classList.add('hidden');
@@ -87,23 +112,4 @@ btnHold.addEventListener('click', function () {
   }
 });
 
-btnNew.addEventListener('click', function () {
-  // Reset total scores to zero
-  scores[0] = 0;
-  scores[1] = 0;
-  score0El.textContent = 0;
-  score1El.textContent = 0;
-
-  // Reset current scores to zero
-  currentScore = 0;
-  activePlayer = activePlayer === 0 ? 1 : 0;
-  currentScore = 0;
-  current0El.textContent = 0;
-  current1El.textContent = 0;
-  playing = true;
-
-  // Reset overlay
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
-});
+btnNew.addEventListener('click', init);
