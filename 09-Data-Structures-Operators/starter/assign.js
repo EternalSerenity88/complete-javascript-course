@@ -1,27 +1,27 @@
-"use strict";
+'use strict';
 
 const books = [
   {
-    title: "Algorithms",
-    author: ["Robert Sedgewick", "Kevin Wayne"],
-    publisher: "Addison-Wesley Professional",
-    publicationDate: "2011-03-24",
+    title: 'Algorithms',
+    author: ['Robert Sedgewick', 'Kevin Wayne'],
+    publisher: 'Addison-Wesley Professional',
+    publicationDate: '2011-03-24',
     edition: 4,
     keywords: [
-      "computer science",
-      "programming",
-      "algorithms",
-      "data structures",
-      "java",
-      "math",
-      "software",
-      "engineering",
+      'computer science',
+      'programming',
+      'algorithms',
+      'data structures',
+      'java',
+      'math',
+      'software',
+      'engineering',
     ],
     pages: 976,
-    format: "hardcover",
-    ISBN: "9780321573513",
-    language: "English",
-    programmingLanguage: "Java",
+    format: 'hardcover',
+    ISBN: '9780321573513',
+    language: 'English',
+    programmingLanguage: 'Java',
     onlineContent: true,
     thirdParty: {
       goodreads: {
@@ -35,27 +35,27 @@ const books = [
     highlighted: true,
   },
   {
-    title: "Structure and Interpretation of Computer Programs",
+    title: 'Structure and Interpretation of Computer Programs',
     author: [
-      "Harold Abelson",
-      "Gerald Jay Sussman",
-      "Julie Sussman (Contributor)",
+      'Harold Abelson',
+      'Gerald Jay Sussman',
+      'Julie Sussman (Contributor)',
     ],
-    publisher: "The MIT Press",
-    publicationDate: "2022-04-12",
+    publisher: 'The MIT Press',
+    publicationDate: '2022-04-12',
     edition: 2,
     keywords: [
-      "computer science",
-      "programming",
-      "javascript",
-      "software",
-      "engineering",
+      'computer science',
+      'programming',
+      'javascript',
+      'software',
+      'engineering',
     ],
     pages: 640,
-    format: "paperback",
-    ISBN: "9780262543231",
-    language: "English",
-    programmingLanguage: "JavaScript",
+    format: 'paperback',
+    ISBN: '9780262543231',
+    language: 'English',
+    programmingLanguage: 'JavaScript',
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -70,23 +70,23 @@ const books = [
   },
   {
     title: "Computer Systems: A Programmer's Perspective",
-    author: ["Randal E. Bryant", "David Richard O'Hallaron"],
-    publisher: "Prentice Hall",
-    publicationDate: "2002-01-01",
+    author: ['Randal E. Bryant', "David Richard O'Hallaron"],
+    publisher: 'Prentice Hall',
+    publicationDate: '2002-01-01',
     edition: 1,
     keywords: [
-      "computer science",
-      "computer systems",
-      "programming",
-      "software",
-      "C",
-      "engineering",
+      'computer science',
+      'computer systems',
+      'programming',
+      'software',
+      'C',
+      'engineering',
     ],
     pages: 978,
-    format: "hardcover",
-    ISBN: "9780130340740",
-    language: "English",
-    programmingLanguage: "C",
+    format: 'hardcover',
+    ISBN: '9780130340740',
+    language: 'English',
+    programmingLanguage: 'C',
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -100,25 +100,25 @@ const books = [
     highlighted: true,
   },
   {
-    title: "Operating System Concepts",
-    author: ["Abraham Silberschatz", "Peter B. Galvin", "Greg Gagne"],
-    publisher: "John Wiley & Sons",
-    publicationDate: "2004-12-14",
+    title: 'Operating System Concepts',
+    author: ['Abraham Silberschatz', 'Peter B. Galvin', 'Greg Gagne'],
+    publisher: 'John Wiley & Sons',
+    publicationDate: '2004-12-14',
     edition: 10,
     keywords: [
-      "computer science",
-      "operating systems",
-      "programming",
-      "software",
-      "C",
-      "Java",
-      "engineering",
+      'computer science',
+      'operating systems',
+      'programming',
+      'software',
+      'C',
+      'Java',
+      'engineering',
     ],
     pages: 921,
-    format: "hardcover",
-    ISBN: "9780471694663",
-    language: "English",
-    programmingLanguage: "C, Java",
+    format: 'hardcover',
+    ISBN: '9780471694663',
+    language: 'English',
+    programmingLanguage: 'C, Java',
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -131,16 +131,16 @@ const books = [
     },
   },
   {
-    title: "Engineering Mathematics",
-    author: ["K.A. Stroud", "Dexter J. Booth"],
-    publisher: "Palgrave",
-    publicationDate: "2007-01-01",
+    title: 'Engineering Mathematics',
+    author: ['K.A. Stroud', 'Dexter J. Booth'],
+    publisher: 'Palgrave',
+    publicationDate: '2007-01-01',
     edition: 14,
-    keywords: ["mathematics", "engineering"],
+    keywords: ['mathematics', 'engineering'],
     pages: 1288,
-    format: "paperback",
-    ISBN: "9781403942463",
-    language: "English",
+    format: 'paperback',
+    ISBN: '9781403942463',
+    language: 'English',
     programmingLanguage: null,
     onlineContent: true,
     thirdParty: {
@@ -155,15 +155,15 @@ const books = [
     highlighted: true,
   },
   {
-    title: "The Personal MBA: Master the Art of Business",
-    author: "Josh Kaufman",
-    publisher: "Portfolio",
-    publicationDate: "2010-12-30",
-    keywords: ["business"],
+    title: 'The Personal MBA: Master the Art of Business',
+    author: 'Josh Kaufman',
+    publisher: 'Portfolio',
+    publicationDate: '2010-12-30',
+    keywords: ['business'],
     pages: 416,
-    format: "hardcover",
-    ISBN: "9781591843528",
-    language: "English",
+    format: 'hardcover',
+    ISBN: '9781591843528',
+    language: 'English',
     thirdParty: {
       goodreads: {
         rating: 4.11,
@@ -175,22 +175,22 @@ const books = [
     },
   },
   {
-    title: "Crafting Interpreters",
-    author: "Robert Nystrom",
-    publisher: "Genever Benning",
-    publicationDate: "2021-07-28",
+    title: 'Crafting Interpreters',
+    author: 'Robert Nystrom',
+    publisher: 'Genever Benning',
+    publicationDate: '2021-07-28',
     keywords: [
-      "computer science",
-      "compilers",
-      "engineering",
-      "interpreters",
-      "software",
-      "engineering",
+      'computer science',
+      'compilers',
+      'engineering',
+      'interpreters',
+      'software',
+      'engineering',
     ],
     pages: 865,
-    format: "paperback",
-    ISBN: "9780990582939",
-    language: "English",
+    format: 'paperback',
+    ISBN: '9780990582939',
+    language: 'English',
     thirdParty: {
       goodreads: {
         rating: 4.7,
@@ -202,16 +202,16 @@ const books = [
     },
   },
   {
-    title: "Deep Work: Rules for Focused Success in a Distracted World",
-    author: "Cal Newport",
-    publisher: "Grand Central Publishing",
-    publicationDate: "2016-01-05",
+    title: 'Deep Work: Rules for Focused Success in a Distracted World',
+    author: 'Cal Newport',
+    publisher: 'Grand Central Publishing',
+    publicationDate: '2016-01-05',
     edition: 1,
-    keywords: ["work", "focus", "personal development", "business"],
+    keywords: ['work', 'focus', 'personal development', 'business'],
     pages: 296,
-    format: "hardcover",
-    ISBN: "9781455586691",
-    language: "English",
+    format: 'hardcover',
+    ISBN: '9781455586691',
+    language: 'English',
     thirdParty: {
       goodreads: {
         rating: 4.19,
@@ -242,8 +242,8 @@ console.log(thirdBook);
 // In the result of your destructuring, the ratings variable should store a number 4.19,
 // and the ratingsCount variable should store a number 144584.
 const ratings = [
-  ["rating", 4.19],
-  ["ratingsCount", 144584],
+  ['rating', 4.19],
+  ['ratingsCount', 144584],
 ];
 
 // solution
@@ -270,21 +270,21 @@ console.log(title, author, ISBN);
 // 2.2 - Each book object has the keywords property. Destructure the first book object from the books array into a variable called tags.
 // The tags variable should be assigned with the value of the keywords property.
 
-const { keywords: tags } = books[0];
-console.log(tags);
+const { keywords: tags2 } = books[0];
+console.log(tags2);
 
 // 2.3 - The seventh book from the books array is missing the programmingLanguage property.
 // Destructure the seventh book object (books[6]) into variables called language and programmingLanguage.
 // Assign the programmingLanguage variable with a default value of 'unknown'.
 
-const { language, programmingLanguage = "unknown" } = books[6];
+const { language, programmingLanguage = 'unknown' } = books[6];
 console.log(language, programmingLanguage);
 
 // 2.4 - Below are two variables called bookTitle and bookAuthor.
 // Reassign them with the values of the title and author properties of the first book object from the books array.
 
-let bookTitle = "unknown";
-let bookAuthor = "unknown";
+let bookTitle = 'unknown';
+let bookAuthor = 'unknown';
 
 ({ bookTitle = title, bookAuthor = author } = books[0]);
 console.log(bookAuthor, bookTitle);
@@ -324,12 +324,66 @@ console.log(bookRating);
 
 // If year is undefined (was not passed), it should be assigned with a default value of 'year unknown'.
 
-printBookInfo({
-  title: "Algorithms",
-  author: "Robert Sedgewick",
-  year: "2011",
-});
-
-function printBookInfo({ title, author, year }) {
+function printBookInfo({ title, author, year = 'year unknown' }) {
   console.log(`${title} by ${author}, ${year}`);
 }
+
+printBookInfo({
+  title: 'Algorithms',
+  author: 'Robert Sedgewick',
+  year: '2011',
+});
+
+printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
+
+// <==================================================================>
+
+// 3. SPREAD OPERATOR
+
+// 3.1 - Each book object has the author property, which stores an array of strings
+//(author names) if there are multiple authors, or a single string (author name)
+// if there is just one author. Declare an array called bookAuthors, and fill it
+// with authors of the first two books from the books array. The bookAuthors array
+// should have just one level (no nested arrays).
+
+const bookAuthors = [...books[0].author, ...books[1].author];
+console.log(bookAuthors);
+
+// 3.2 - Write a function called spellWord that accepts a single string as an argument.
+// This function should log to the console each letter of the argument separated by a space.
+
+function spellWord(inputStr) {
+  console.log(...inputStr);
+}
+
+spellWord('SKYLAR');
+
+// <=======================================================================>
+
+// 4. REST PATTERN AND PARAMETERS
+
+// 4.1 Destructure the keywords property (array) of the first book from the books array
+//into variables called mainKeyword and rest. The first keyword should be assigned to
+//ainKeyword, and the rest of the keywords should be assigned
+//to the rest variable (it should be an array).
+
+const [mainKeyword, ...rest] = books[0].keywords;
+console.log(mainKeyword, rest);
+
+// 4.2 - Destructure the second book from the books array
+// into a variable called bookPublisher. The bookPublisher variable should be assigned with the value of the publisher property of the book object.
+// Assign the rest of the properties to the restOfTheBook variable.
+
+const { publisher: bookPublisher, ...restOfTheBook } = books[1];
+console.log(bookPublisher, restOfTheBook);
+
+// 4.3 - Write a function called printBookAuthorsCount that has two parameters called
+// title and authors. The authors parameter should accept any number of arguments.
+// This function should log to the console a string formatted like that: "The book "${title}"
+// has ${authors.length} authors".
+
+function printBookAuthorsCount(title, ...authors) {
+  console.log(`The book ${title} has ${authors.length} authors`);
+}
+
+printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin WAyne');
