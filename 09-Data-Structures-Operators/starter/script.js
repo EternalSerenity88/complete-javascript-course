@@ -297,3 +297,101 @@ console.log(
 );
 
 console.log(new Set('skylarcarrington').size);
+
+// MAPS ================================================================================>
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano'); // similar to 'add', adds data stracture, but also RETURNS
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+console.log(rest.get('name')); // get value to console by the key
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories')); // checks if it has such a key
+rest.delete(2); // to delete property
+console.log(rest);
+console.log(rest.size); // show the 'the length' of the map
+// rest.clear(); // to delete everything
+
+// How to use an array as a key
+const arr1 = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest.get(arr));
+
+// Using DOM element as a key
+rest.set(document.querySelector('h1'), 'Heading');
+
+// Another way to create MAPS using arrays as arguments, each for a propety and within another array
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again!'],
+]);
+console.log(question);
+
+// Convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz app
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+// Using prompt to compare input data from the map structure
+// const answer = Number(prompt('Your answer'));
+// console.log(answer);
+
+// if (answer === question.get('correct')) {
+//   console.log(question.get(true));
+// } else {
+//   console.log(question.get(false));
+// }
+
+// Converting maps to an array using spread operator
+console.log([...question]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
+
+// STRINGS ================================================================================>
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+
+// direct indexing
+console.log('B737'[0]);
+
+console.log(airline.length);
+// direct length method
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
