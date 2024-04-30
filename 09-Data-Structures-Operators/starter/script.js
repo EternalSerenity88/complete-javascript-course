@@ -393,5 +393,63 @@ console.log(airline.indexOf('portugal'));
 console.log(airline.slice(4));
 console.log(airline.slice(4, 7));
 
-console.log(airline.slice(0, airline.indexOf(' ')));
-console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+console.log(airline.slice(0, airline.indexOf(' '))); // First words extraction
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Last words extraction
+
+console.log(airline.slice(-2)); // cutting from the end
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle :)');
+  else {
+    console.log('Tou got lucky :)');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('jonas'));
+console.log(typeof new String('jonas'));
+
+console.log(typeof new String('jonas').slice(1));
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'jOnAS';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+const email = 'hello@jonas.io';
+const loginEmail = '   Hello@Jonas.Io \n';
+
+const normalizedEmail = loginEmail.toLowerCase().trim(); // .trim - to get rid of spaces
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// repalcing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All apssengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replaceAll('door', 'gate')); // replace all same elements
+console.log(announcement.replace('23', '47')); // Replace only one
+console.log(announcement.replace(/door/g, 'gate')); // converting string regular expression, g-global to affect all same elements
+
+// Booleans
+const plane1 = 'A320neo';
+console.log(plane1.includes('A320'));
+console.log(plane1.includes('Boeing'));
+console.log(plane1.includes('Airb'));
+
+if (plane1.startsWith('A') && plane1.endsWith('neo')) {
+  console.log('Part of the NEW ARirbus family');
+}
