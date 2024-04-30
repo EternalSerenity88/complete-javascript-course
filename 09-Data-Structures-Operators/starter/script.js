@@ -453,3 +453,39 @@ console.log(plane1.includes('Airb'));
 if (plane1.startsWith('A') && plane1.endsWith('neo')) {
   console.log('Part of the NEW ARirbus family');
 }
+
+// practice
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome abroad!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+// splitting and joining
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schnedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
+const newNamee = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newNamee);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas schmedtmann');
