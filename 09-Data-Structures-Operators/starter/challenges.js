@@ -160,3 +160,20 @@ for (const [time, event] of gameEvent) {
       : `[SECOND HALF] ${time} ${event}`
   );
 }
+
+// 4. CHALLENGE ========================================================>
+
+const inputedText = document.body.append(document.createElement('textarea'));
+const button = document.body.append(document.createElement('button'));
+const text = document.querySelector('textarea').value;
+
+button.addEventListener('click', convertUnder);
+
+const convertUnder = function (inputedText) {
+  const splitted = under_scored.split('_');
+  const secPart = splitted[1];
+  splitted[1] = secPart[0].toUpperCase() + secPart.slice(1);
+  const joined = splitted.join('');
+  console.log(joined);
+  inputedText = joined;
+};
