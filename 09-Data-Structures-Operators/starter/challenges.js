@@ -163,17 +163,62 @@ for (const [time, event] of gameEvent) {
 
 // 4. CHALLENGE ========================================================>
 
-const inputedText = document.body.append(document.createElement('textarea'));
-const button = document.body.append(document.createElement('button'));
-const text = document.querySelector('textarea').value;
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
 
-button.addEventListener('click', convertUnder);
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
 
-const convertUnder = function (inputedText) {
-  const splitted = under_scored.split('_');
-  const secPart = splitted[1];
-  splitted[1] = secPart[0].toUpperCase() + secPart.slice(1);
-  const joined = splitted.join('');
-  console.log(joined);
-  inputedText = joined;
-};
+  // Splitting input string by '\n' to an array 'rows'
+  const rows = text.split('\n');
+  let newText;
+
+  for (const [i, row] of rows.entries()) {
+    // Iterating each of the rows and splitting them by '_' into first and second, also trimming any spaces with
+    // .trim and making all letters small with .toLowerCase
+    const [first, second] = row.toLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    newText += output + '\n';
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+  document.querySelector('textarea').value = newText;
+});
+
+// const inputedText = document.createElement('textarea');
+// const button = document.createElement('button');
+
+// document.body.append(inputedText);
+// document.body.append(button);
+
+// const convertUnder = function () {
+//   const text = inputedText.value.toLowerCase();
+//   let newText = [];
+//   let capitalizeNext = false;
+//   let newLineAdded = false;
+
+//   for (let char of text) {
+//     if (char === '_') {
+//       capitalizeNext = true;
+//       continue; // Skip adding the underscore to newText
+//       // char = '';
+//     } else if (capitalizeNext && char !== ' ') {
+//       char = char.toUpperCase();
+//       capitalizeNext = false;
+//     } else if (char === ' ' && newLineAdded === false) {
+//       char = '/n';
+//       newLineAdded = true;
+//     } else if (char === ' ' && newLineAdded) {
+//       continue;
+//     } else if (char !== ' ') {
+//       newLineAdded = true;
+//     }
+//     newText.push(char); // Add the processed character to the new text array
+//   }
+//   inputedText.value = newText.join(''); // Update the textarea with the new text
+// };
+
+// button.addEventListener('click', convertUnder);
