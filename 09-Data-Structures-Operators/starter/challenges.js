@@ -228,13 +228,19 @@ document.querySelector('button').addEventListener('click', function () {
 const flights1 =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-// 1. Divide by '+'
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+// 1. Divide by '+' into four string variables
 for (const flight of flights.split('+')) {
+  // 2. Destructure each string into arrays by ';'
   const [type, from, to, time] = flight.split(';');
+  // 3. Add red sign if 'type' include '_Delayed', otherwise leave empty
+  // 4. Then repalce all underscores with spaces
   const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
     '_',
     ' '
   )}
+  // 5. 
    ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);
   console.log(output);
 }
