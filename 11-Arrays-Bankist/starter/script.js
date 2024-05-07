@@ -61,6 +61,8 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+// TRANSACTIONS DISPLAY ================================================
+
 // Passing an arrays of transaction data (movements)
 const displayMovements = function (movements) {
   // Sets data in main index file to zero
@@ -88,6 +90,41 @@ const displayMovements = function (movements) {
 
 // To display transactions for account1
 displayMovements(account1.movements);
+
+// USERNAMES =====================================================================
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    // Choosing forEach, because we need to mutate current arrays
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0]) // .map(function (name) { return name[0]})
+      .join(''); // converts an array back to a single string
+  });
+};
+createUsernames(accounts);
+console.log(accounts);
+
+// const createUsernames = function (user) {
+//   const username = user
+//     .toLowerCase()
+//     .split(' ')
+//     .map(name => name[0]) // .map(function (name) { return name[0]})
+//     .join(''); // converts an array back to a single string
+//   return username;
+// };
+// console.log(createUsernames('Steven Thomas Williams'));
+
+// const user = 'Steven Thomas Williams'; // stw - username
+// const username = user.toLowerCase().split(' ');
+// let uName = [];
+
+// for (const currentUser of username) {
+//   uName += currentUser[0];
+// }
+
+// console.log(uName);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -190,3 +227,23 @@ currenciesUnique.forEach(function (value, _, map) {
   // therefore, second argument is irrelevant but must be included for consistency sake
   console.log(`${value}: ${value}`);
 });
+
+// DATA TRANSFORMATIONS ============================================================
+
+// THE MAP METHOD (loops and creates new array)
+// const movements1 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements1.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+
+const movementsUSD = movements1.map(mov => mov * eurToUsd);
+
+console.log(movements1);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
