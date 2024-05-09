@@ -91,6 +91,22 @@ const displayMovements = function (movements) {
 // To display transactions for account1
 displayMovements(account1.movements);
 
+
+const calcDisplaySummary = function(movements) {
+  const incomes = 
+}
+calcDisplayBalance(account1.movements);
+
+
+
+
+
+
+
+
+
+
+
 // USERNAMES =====================================================================
 
 const createUsernames = function (accs) {
@@ -104,14 +120,6 @@ const createUsernames = function (accs) {
   });
 };
 createUsernames(accounts);
-
-// BALANCE DISPLAY =============================================================
-
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
-};
-calcDisplayBalance(account1.movements);
 
 // const createUsernames = function (user) {
 //   const username = user
@@ -132,6 +140,27 @@ calcDisplayBalance(account1.movements);
 // }
 
 // console.log(uName);
+
+// BALANCE DISPLAY =============================================================
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -293,3 +322,18 @@ const max = movements.reduce((acc, mov) => {
   else return mov;
 }, movements[0]); // sets initial value for accumulator as a first element of the array
 console.log(max);
+
+// FUNCTION CHAINING ======================================================
+
+// const eurToUsd = 1.1;
+
+// PIPELINE
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map((mov, i, arr) => {
+    console.log(arr);
+    return mov * eurToUsd;
+  })
+  // .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD);
