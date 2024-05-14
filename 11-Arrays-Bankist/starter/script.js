@@ -78,7 +78,7 @@ const displayMovements = function (movements) {
       <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-      <div class="movements__value">${mov}</div>
+      <div class="movements__value">${mov}€</div>
     </div>;
     `;
 
@@ -91,21 +91,25 @@ const displayMovements = function (movements) {
 // To display transactions for account1
 displayMovements(account1.movements);
 
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}€`;
 
-const calcDisplaySummary = function(movements) {
-  const incomes = 
-}
-calcDisplayBalance(account1.movements);
+  const out = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(out)}€`;
 
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest}€`;
+};
 
-
-
-
-
-
-
-
-
+calcDisplaySummary(account1.movements);
 
 // USERNAMES =====================================================================
 
@@ -145,22 +149,9 @@ createUsernames(accounts);
 
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance} €`;
 };
 calcDisplayBalance(account1.movements);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -172,7 +163,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -281,46 +272,46 @@ console.log(movements1);
 console.log(movementsUSD);
 
 const movementsUSDfor = [];
-for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+for (const mov of movements1) movementsUSDfor.push(mov * eurToUsd);
 console.log(movementsUSDfor);
 
 // FILTER ==============================================================
 
-const deposits = movements.filter(function (mov) {
+const deposits = movements1.filter(function (mov) {
   return mov > 0;
 });
-console.log(movements);
+console.log(movements1);
 console.log(deposits);
 
 const depositsFor = [];
-for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+for (const mov of movements1) if (mov > 0) depositsFor.push(mov);
 console.log(depositsFor);
 
-const withdrawals = movements.filter(function (mov) {
+const withdrawals = movements1.filter(function (mov) {
   return mov < 0;
 });
 console.log(withdrawals);
 
 // REDUCE ======================================================================
 
-console.log(movements);
+console.log(movements1);
 
 // accumulator -> SNOWBALL
-const balance = movements.reduce(function (acc, cur, i, arr) {
+const balance = movements1.reduce(function (acc, cur, i, arr) {
   console.log(`Iteration ${i}: ${acc}`);
   return acc + cur;
 }, 0); // zero is initial value of accumulator
 console.log(balance);
 
 let balance2 = 0;
-for (const mov of movements) balance2 += mov;
+for (const mov of movements1) balance2 += mov;
 console.log(balance2);
 
 // Maximum value
-const max = movements.reduce((acc, mov) => {
+const max = movements1.reduce((acc, mov) => {
   if (acc > mov) return acc;
   else return mov;
-}, movements[0]); // sets initial value for accumulator as a first element of the array
+}, movements1[0]); // sets initial value for accumulator as a first element of the array
 console.log(max);
 
 // FUNCTION CHAINING ======================================================
@@ -328,10 +319,10 @@ console.log(max);
 // const eurToUsd = 1.1;
 
 // PIPELINE
-const totalDepositsUSD = movements
+const totalDepositsUSD = movements1
   .filter(mov => mov > 0)
   .map((mov, i, arr) => {
-    console.log(arr);
+    // console.log(arr);
     return mov * eurToUsd;
   })
   // .map(mov => mov * eurToUsd)
