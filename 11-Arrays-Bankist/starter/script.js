@@ -153,6 +153,20 @@ const calcDisplayBalance = function (movements) {
 };
 calcDisplayBalance(account1.movements);
 
+// LOGIN ========================================================================
+
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  // Disables default behaviour of submit function to reload the page on a click
+  // Form also include 'enter' key along mouse click as a default
+  e.preventDefault();
+
+  currentAccount = accounts.find(acc => acc.owner === inputLoginUsername.value);
+
+  console.log('LOGIN');
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -328,3 +342,18 @@ const totalDepositsUSD = movements1
   // .map(mov => mov * eurToUsd)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(totalDepositsUSD);
+
+// FIND METHOD
+
+// return first element from the array to be true
+// returns one element, compared to filter function which returns array (can be one to many elements)
+const firstWithdrawal = movements1.find(mov => mov < 0);
+
+console.log(movements1);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+
+// find object by one of its properties
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
