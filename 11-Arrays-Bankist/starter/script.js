@@ -162,9 +162,14 @@ btnLogin.addEventListener('click', function (e) {
   // Form also include 'enter' key along mouse click as a default
   e.preventDefault();
 
-  currentAccount = accounts.find(acc => acc.owner === inputLoginUsername.value);
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
 
-  console.log('LOGIN');
+  console.log(currentAccount);
+  if (currentAccount.pin === Number(inputLoginPin.value)) {
+    console.log('LOGIN');
+  }
 });
 
 /////////////////////////////////////////////////
